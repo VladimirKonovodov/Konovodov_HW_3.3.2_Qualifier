@@ -54,23 +54,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-        private void initSpinnerLanguages() {
-            ArrayAdapter<CharSequence> adapterCountries = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
-            adapterCountries.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            mLanguagesSpinner.setAdapter(adapterCountries);
 
-            mLanguagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    String[] countries = getResources().getStringArray(R.array.languages);
+    private void initSpinnerLanguages() {
+        ArrayAdapter<CharSequence> adapterCountries = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
+        adapterCountries.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mLanguagesSpinner.setAdapter(adapterCountries);
 
-                }
+        mLanguagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] countries = getResources().getStringArray(R.array.languages);
 
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-                }
-            });
-        }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+    }
 
 
     private void initLanguagesChange(String lang) {
@@ -86,13 +87,14 @@ public class MainActivity extends AppCompatActivity {
                 locale = new Locale("en");
                 break;
             }
-            default: break;
+            default:
+                break;
 
         }
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
         getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
-        setTitle(R.string.app_name);
+        //setTitle(R.string.app_name);
         recreate();
         /*
         if (adapter != null) {
@@ -102,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
 
          */
     }
-
-
-
 
 
     public void init() {
