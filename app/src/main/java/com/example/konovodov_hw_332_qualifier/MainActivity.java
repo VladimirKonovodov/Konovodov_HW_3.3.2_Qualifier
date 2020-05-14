@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static Button button;
 
-    private Locale locale;
+    public static Locale locale;
 
 
     private Spinner mLanguagesSpinner;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mLanguagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String[] countries = getResources().getStringArray(R.array.languages);
+                //String[] languages = getResources().getStringArray(R.array.languages);
             }
 
             @Override
