@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+        setTitle(R.string.app_name);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         mLanguagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //String[] languages = getResources().getStringArray(R.array.languages);
             }
 
             @Override
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         Configuration configuration = new Configuration();
         configuration.setLocale(locale);
         getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
-        setTitle(R.string.app_name);
+
         recreate();
     }
 
